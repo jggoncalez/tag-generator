@@ -9,6 +9,6 @@ dados = [
 
 # Criando o DataFrame (banco de dados em memória)
 df = pd.DataFrame(dados)
-
+df.to_csv("banco_de_dados.csv", index=False)
 # Exibindo os dados
 print(df)
