@@ -1,7 +1,7 @@
 import qrcode                   # Importa a biblioteca principal para gerar QR Codes
 import qrcode.constants         # Importa constantes úteis da biblioteca
 
-from UI import prod_codigo# Importe a variável 'data' de outro arquivo Python (sem .py na extensão)
+from UI import prod_codigo # Importe a variável 'data' de outro arquivo Python (sem .py na extensão)
 
 # Cria uma instância de QRCode com configurações específicas
 qr = qrcode.QRCode(

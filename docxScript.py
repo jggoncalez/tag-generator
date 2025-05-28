@@ -7,7 +7,7 @@ import os
 # Importando variáveis
 
 from UI import prod_codigo
-from UI import prod_nome
+# from UI import prod_nome
 
 doc = Document()
 
@@ -18,7 +18,7 @@ section.page_height = Inches(3)
 section.top_margin = section.right_margin = section.left_margin = section.bottom_margin = 0
 
 # Documento
-title = doc.add_heading(f"Etiqueta: {prod_nome", level=1)
+title = doc.add_heading(f"Etiqueta: {prod_codigo}", level=1)
 text = doc.add_paragraph(str(prod_codigo))
 
 # QR Code
