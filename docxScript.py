@@ -7,7 +7,8 @@ import os
 # Importando variáveis
 
 from UI import prod_codigo
-# from UI import prod_nome
+from UI import nome_produto
+
 
 doc = Document()
 
@@ -18,7 +19,7 @@ section.page_height = Inches(3)
 section.top_margin = section.right_margin = section.left_margin = section.bottom_margin = 0
 
 # Documento
-title = doc.add_heading(f"Etiqueta: {prod_codigo}", level=1)
+title = doc.add_heading(f"Etiqueta: {nome_produto}", level=1)
 text = doc.add_paragraph(str(prod_codigo))
 
 # QR Code
@@ -32,7 +33,7 @@ text.alignment = WD_ALIGN_PARAGRAPH.CENTER
 qrcode_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
 # Salvar
-filename = "Docs/tag.docx"
+filename = f"Docs/tag_{prod_codigo}.docx"
 os.makedirs(os.path.dirname(filename), exist_ok=True)
 doc.save(filename)
 print(f"Documento salvo como: {os.path.abspath(filename)}")
