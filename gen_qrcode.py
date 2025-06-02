@@ -1,20 +1,22 @@
-import qrcode                   # Importa a biblioteca principal para gerar QR Codes
-import qrcode.constants         # Importa constantes úteis da biblioteca
+# Bibliotecas
+import qrcode
+import qrcode.constants
 
-from UI import prod_codigo # Importe a variável 'data' de outro arquivo Python (sem .py na extensão)
+# Importa variável da interface
+from UI import prod_codigo
 
-# Cria uma instância de QRCode com configurações específicas
+# Configura o QR Code
 qr = qrcode.QRCode(
-    version=1,                                 # Define a versão do QR Code (tamanho e capacidade)
-    box_size=5,                               # Tamanho de cada quadrado do QR Code em pixels
-    border=1,                                  # Largura da borda (em caixas)
-    error_correction=qrcode.constants.ERROR_CORRECT_Q,  # Nível de correção de erro (Q(Quartile) = 25% dos dados)
+    version=1,  # Versão do QR Code (tamanho fixo)
+    box_size=5,  # Tamanho dos blocos
+    border=1,  # Borda ao redor
+    error_correction=qrcode.constants.ERROR_CORRECT_Q  # Correção de erro (Q (Quartile) = 25% dos dados)
 )
 
-qr.add_data(prod_codigo)              # Adiciona os dados (texto ou URL) ao QR Code
-qr.make(fit = True)              # Gera a matriz do QR Code, ajustando o tamanho para acaber todos os dados, se necessário
+# Adiciona dados e gera o QR Code
+qr.add_data(prod_codigo)
+qr.make(fit=True)
 
-
-img = qr.make_image(fill_color="black", back_color="white")   # Cria uma imagem do QR Code com as cores especificadas
-
-img.save(f"qrcode_{prod_codigo}.png") # Salva a imagem gerada em um arquivo PNG
+# Cria e salva a imagem do QR Code
+img = qr.make_image(fill_color="black", back_color="white")
+img.save(f"qrcode_{prod_codigo}.png")
