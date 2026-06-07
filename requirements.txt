@@ -1,0 +1,4 @@
+pywebview[qt]
+qrcode[pil]
+python-docx
+Pillow
